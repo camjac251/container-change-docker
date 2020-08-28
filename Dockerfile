@@ -13,6 +13,9 @@ RUN \
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
+ADD ffmpeg-container-change.sh /ffmpeg-container-change.sh
+RUN chmod +x /ffmpeg-container-change.sh
+
 VOLUME ["/config"]
 VOLUME ["/work"]
 
