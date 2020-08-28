@@ -14,7 +14,8 @@ ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
 VOLUME ["/config"]
+VOLUME ["/work"]
 
-WORKDIR /config
+WORKDIR /work
 
 ENTRYPOINT ["/start.sh"]
