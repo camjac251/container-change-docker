@@ -3,7 +3,7 @@ FROM ubuntu
 MAINTAINER camjac251
 
 # install packages
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y curl wget
  
 #make config folder
 RUN \
