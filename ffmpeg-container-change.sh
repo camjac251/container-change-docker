@@ -14,8 +14,8 @@
 container="m2ts"         # Choose output container
 preset="medium"         # Preset for CPU encoding only.
 crf="1"                # CRF / QP for CPU encoding only.
-tempdir="/tmp"          # Temporary directory for transcodes (required)
-overwrite="no"          # Overwrite original file (anything other than "yes" will result in a *.bak file)
+# tempdir="/tmp"          # Temporary directory for transcodes (required)
+# overwrite="no"          # Overwrite original file (anything other than "yes" will result in a *.bak file)
 
 ####################################################
 # You can set filetypes to parse here (remember to not use the same types as your container above)
@@ -112,26 +112,25 @@ echo "Working..."
 
 # Run transcode
 
-ffmpeg -y -i "$i" $vconvert $tempdir/"${filename%.*}".$container && \
-ffmpeg -y -i "$i" $tempdir/"${filename%.*}"_audio.wav && \
+ffmpeg -y -i "$i" $vconvert "$dirpath"/"${filename%.*}".$container && \
+ffmpeg -y -i "$i" "$dirpath"/"${filename%.*}"_audio.wav && \
 
 # Overwrite logic
 
-  if [ "$overwrite" = "yes" ]
-    then
-      mv $tempdir/"${filename%.*}".$container "$dirpath"/"${filename%.*}".$container
-      mv $tempdir/"${filename%.*}"_audio.wav "$dirpath"/"${filename%.*}"_audio.wav
-    else
-      mv --backup --suffix=.bak $tempdir/"${filename%.*}".$container "$dirpath"/"${filename%.*}".$container
-      mv --backup --suffix=.bak $tempdir/"${filename%.*}"_audio.wav "$dirpath"/"${filename%.*}"_audio.wav
-  fi
+  # if [ "$overwrite" = "yes" ]
+  #   then
+  #     mv $tempdir/"${filename%.*}".$container "$dirpath"/"${filename%.*}".$container
+  #     mv $tempdir/"${filename%.*}"_audio.wav "$dirpath"/"${filename%.*}"_audio.wav
+  #   else
+  #     mv --backup --suffix=.bak $tempdir/"${filename%.*}".$container "$dirpath"/"${filename%.*}".$container
+  #     mv --backup --suffix=.bak $tempdir/"${filename%.*}"_audio.wav "$dirpath"/"${filename%.*}"_audio.wav
+  # fi
 
 echo "Completed"
 
 # Reset variables
 
   vcodec=""
-  acodec=""
   vconvert=""
 
   done
