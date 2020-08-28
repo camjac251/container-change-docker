@@ -19,7 +19,8 @@ chmod a+x /config/ffmpeg-install
 /config/ffmpeg-install --install
 /config/ffmpeg-install --update
 
-cp /ffmpeg-container-change.sh /config/ffmpeg-container-change.sh
+wget https://raw.githubusercontent.com/camjac251/container-change-docker/master/ffmpeg-container-change.sh -O /config/ffmpeg-container-change.sh
+chmod a+x /config/ffmpeg-container-change.sh
 chown -R nobody:users /config
 
 echo "[Info] Entering work folder"
