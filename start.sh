@@ -12,7 +12,7 @@ chown -R nobody:users /home
 
 #chsh -s /bin/bash nobody
 
-cp /convert2mkv.sh /config/ffmpeg-container-change.sh
+cp /ffmpeg-container-change.sh /config/ffmpeg-container-change.sh
 chown -R nobody:users /config
 
 echo "[Info] Starting script"
