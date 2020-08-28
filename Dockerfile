@@ -1,11 +1,9 @@
 FROM ubuntu
 
-MAINTAINER Bjonness406
+MAINTAINER camjac251
 
 # install packages
-RUN apt-get update && apt-get install -y \
- curl \
- libav-tools
+RUN apt-get update && apt-get install -y curl
  
 #make config folder
 RUN \
