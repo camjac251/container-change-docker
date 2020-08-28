@@ -12,11 +12,11 @@ chown -R nobody:users /home
 
 #chsh -s /bin/bash nobody
 
-cp /convert2mkv.sh /config/convert2mkv.sh
+cp /convert2mkv.sh /config/ffmpeg-container-change.sh
 chown -R nobody:users /config
 
 echo "[Info] Starting script"
-bash /config/convert2mkv.sh
-#su - nobody -c /config/convert2mkv.sh
+bash /config/ffmpeg-container-change.sh
+#su - nobody -c /config/ffmpeg-container-change.sh
 
 echo "Stopping Container, script finished.."
