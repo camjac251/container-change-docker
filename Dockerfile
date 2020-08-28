@@ -3,7 +3,7 @@ FROM ubuntu
 MAINTAINER camjac251
 
 # install packages
-RUN apt-get update && apt-get install -y curl wget
+RUN apt-get update && apt-get install -y curl wget aria2
  
 #make config folder
 RUN \
@@ -13,8 +13,12 @@ RUN \
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
-VOLUME ["/config"]
+ADD ffmpeg-container-change.sh /ffmpeg-container-change.sh
+RUN chmod +x /ffmpeg-container-change.sh
 
-WORKDIR /config
+VOLUME ["/config"]
+VOLUME ["/work"]
+
+WORKDIR /work
 
 ENTRYPOINT ["/start.sh"]

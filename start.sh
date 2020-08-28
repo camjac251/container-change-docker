@@ -13,6 +13,7 @@ chown -R nobody:users /home
 #chsh -s /bin/bash nobody
 
 # install ffmpeg
+cd /config
 wget https://raw.githubusercontent.com/q3aql/ffmpeg-install/master/ffmpeg-install -O /config/ffmpeg-install
 chmod a+x /config/ffmpeg-install
 /config/ffmpeg-install --install
