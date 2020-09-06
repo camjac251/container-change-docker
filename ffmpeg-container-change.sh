@@ -113,7 +113,7 @@ echo "Working..."
 # Run transcode
 
 ffmpeg -y -i "$i" $vconvert "$dirpath"/"${filename%.*}".$container && \
-ffmpeg -y -i "$i" -rf64 auto "$dirpath"/"${filename%.*}"_audio.wav && \
+ffmpeg -y -i "$i" -write_bext 1 -rf64 always "$dirpath"/"${filename%.*}"_audio.wav && \
 
 # Overwrite logic
 
