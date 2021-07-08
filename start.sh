@@ -14,7 +14,7 @@ chown -R nobody:users /home
 
 # install ffmpeg
 cd /config
-wget https://raw.githubusercontent.com/q3aql/ffmpeg-install/master/ffmpeg-install -O /config/ffmpeg-install
+wget https://raw.githubusercontent.com/q3aql/ffmpeg-install/master/src/ffmpeg-install -O /config/ffmpeg-install
 chmod a+x /config/ffmpeg-install
 /config/ffmpeg-install --install
 /config/ffmpeg-install --update
