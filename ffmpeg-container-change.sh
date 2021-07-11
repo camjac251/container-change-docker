@@ -11,7 +11,7 @@
 # Edit these variables as required (do not work yet)
 ####################################################
 
-container="m2ts"         # Choose output container
+# container="m2ts"         # Choose output container
 preset="medium"         # Preset for CPU encoding only.
 crf="1"                # CRF / QP for CPU encoding only.
 # tempdir="/tmp"          # Temporary directory for transcodes (required)
